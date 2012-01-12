@@ -1,0 +1,13 @@
+Catkin-ProjectName: darc_ros
+Description: 
+Author: Morten Kjaergaard <mkjargaard@willowgarage.com>
+Maintainer: Morten Kjaergaard <mkjargaard@willowgarage.com>
+Homepage: 
+Vcs-Git: 
+
+Version: 0.0.1
+
+Depends: catkin, roscpp_core, darc, geometry_experimental, ros_comm
+
+Catkin-CopyrightType: willowgarage
+Catkin-DebRulesType: python_distutils
