@@ -46,7 +46,7 @@ protected:
   Stg::World* world_;
   bool init_done_;
   boost::mutex init_mutex_;
-  boost::condition_variable init_condition_;;
+  boost::condition_variable init_condition_;
 
 public:
   StageComponent(const std::string& instance_name, darc::Node::Ptr node);
@@ -64,15 +64,15 @@ public:
 
 };
 
-bool updateCallback(Stg::World* world, StageComponent * comp)
+bool updateCallback(Stg::World* world, StageComponent * component)
 {
-  comp->update();
+  component->update();
   return false;
 }
 
 void StageComponent::runStageThread()
 {
-  const std::string file = "/u/mkjargaard/repositories/mkjargaard/darcbuild/stage_darc/world/simple.world";
+  const std::string file = "/home/local/darcbuild/stage_darc/world/simple.world";
 
   if ( !boost::filesystem::exists(file) )
   {
