@@ -45,12 +45,11 @@ int main(int argc, const char* argv[])
 
   // Create and run Component1
   darc::Component::Ptr c1 = node->instantiateComponent( "StageComponent" );
-  boost::thread t1( boost::bind(&darc::Component::run, c1) );
+  c1->run();
 
   // Set up node connections
-  node->setNodeID(200);
-  node->accept("udp://127.0.0.1:5200");
-  node->connect(300, "udp://127.0.0.1:5300");
+  node->accept("udp://127.0.0.1:5120-5130");
+  node->connect("udp://127.0.0.1:5120-5130");
 
   // Run Node in main thread
   node->run();
